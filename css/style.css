@@ -1,0 +1,459 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights:
+
+
+- letter-spacing: 
+/
+
+-- 02 COLORS
+- Primary:
+- Tints: ,
+- Shades: 
+- Secondary: 
+- Greys: #333, #444, #dddd
+
+--04 IMAGES
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+-- 05 SHADOWS
+
+
+-- 06 BORDER-RADIUS
+
+
+-- 07 WHITESPACE
+    
+Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+/* -------------------------------------------------- */
+/*-------------------- GENERAL------------------------*/
+/* -------------------------------------------------- */
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 120%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #333;
+  background-color: #ddd;
+}
+
+.app {
+  padding: 3.2rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  /* gap: 2rem; */
+
+  max-width: 45rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  height: 2rem;
+  width: 6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+
+  transition: all 0.3s;
+  background-color: #444;
+  color: #fff;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #333;
+}
+
+.points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.points-line {
+  background-color: #111;
+  padding: 0rem 1.24rem;
+
+  border-radius: 1000px;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.08);
+
+  transition: all 3s;
+}
+
+.points-line ul {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.2rem 0.62rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.hidden {
+  /* 1) Hide it visually */
+  opacity: 0;
+  /* 2) Make it unaccessible to mouse and keybord */
+  pointer-events: none;
+  /* 3) Hide it from screen readers */
+  visibility: hidden;
+}
+
+/* -------------------------------------------------- */
+/*-------------------- COLUMN 1 ----------------------*/
+/* -------------------------------------------------- */
+.col1 {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.4rem;
+  overflow: hidden;
+  padding: 0 1.8rem;
+}
+
+.btn--restart {
+  height: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+.white-points {
+  transform: translateX(9.12rem);
+}
+
+.white-points-line ul {
+  background-color: #fff;
+}
+
+/* -------------------------------------------------- */
+/*-------------------- COLUMN 3 ----------------------*/
+/* -------------------------------------------------- */
+.col3 {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.4rem;
+  overflow: hidden;
+  padding: 0 1.8rem;
+}
+
+.infos {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.score {
+  font-size: 1rem;
+}
+
+.red-points {
+  transform: translateX(-9.12rem);
+}
+
+.red-points-line ul {
+  background-color: rgb(182, 54, 54);
+}
+
+/* -------------------------------------------------- */
+/*-------------------- COLUMN 2-----------------------*/
+/* -------------------------------------------------- */
+.col2 {
+  position: relative;
+}
+.game {
+  padding: 2.4rem 0.8rem 0.8rem 0.8rem;
+  border-radius: 16px;
+  background-color: #aaa;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+  box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.16);
+}
+
+.hidden-colors {
+  padding: 0 1rem;
+  position: relative;
+}
+.hide-holes {
+  background-color: rgba(187, 187, 187);
+  width: 10.4rem;
+  height: 2.4rem;
+  position: absolute;
+  right: 1rem;
+  top: -0.2rem;
+  border-radius: 1000px;
+  /* animation: translate 3s forwards ease-in; */
+}
+
+.lines {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.line,
+.hidden-colors {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.line-number {
+  width: 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.holes {
+  list-style-type: none;
+  display: flex;
+  gap: 0.8rem;
+}
+.hole {
+  width: 2rem;
+  height: 2rem;
+  background-color: #222;
+  border-radius: 1000px;
+  box-shadow: inset 0 0 0.08rem 0.48rem #bbb;
+  transition: all 0.3s;
+}
+
+.line-active .hole {
+  box-shadow: inset 0 0 0.08rem 0.48rem #ddd;
+}
+
+.colors-list {
+  position: absolute;
+  left: -1.8rem;
+  bottom: 0;
+  margin-top: 0.6rem;
+}
+
+.existing-colors {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1rem;
+}
+
+.color {
+  width: 2rem;
+  height: 2rem;
+  background-color: #222;
+  border-radius: 1000px;
+  box-shadow: inset 0 0 0.08rem 0.12rem #bbb;
+}
+.active {
+  box-shadow: inset 0 0 0.08rem 0.24rem #444;
+}
+
+#red {
+  background-color: red;
+}
+#green {
+  background-color: rgb(47, 255, 82);
+}
+#blue {
+  background-color: cyan;
+}
+#yellow {
+  background-color: rgb(236, 236, 58);
+}
+#white {
+  background-color: #fff;
+}
+#black {
+  background-color: black;
+}
+#pink {
+  background-color: rgb(255, 65, 198);
+}
+#orange {
+  background-color: rgb(248, 120, 73);
+}
+
+@keyframes translate {
+  from {
+    height: 2.4rem;
+  }
+  to {
+    height: 0rem;
+  }
+}
+
+.hole--red {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: red;
+}
+.hole--green {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: rgb(47, 255, 82);
+}
+.hole--blue {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: cyan;
+}
+.hole--yellow {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: rgb(236, 236, 58);
+}
+.hole--white {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: #fff;
+}
+.hole--black {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: black;
+}
+.hole--pink {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: rgb(255, 65, 198);
+}
+.hole--orange {
+  box-shadow: inset 0 0 0.08rem 0.28rem #ddd !important;
+  background-color: rgb(248, 120, 73);
+}
+
+/* -------------------------------------------------- */
+/*-------------------- WIN MESSAGE---------------------*/
+/* -------------------------------------------------- */
+
+.win {
+  width: 26rem;
+  background-color: rgba(65, 166, 197, 0.8);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2.8rem;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-13rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  align-items: center;
+  transition: all 3s;
+}
+
+.win h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.win h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.win p {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.win h4 {
+  font-size: 1.2rem;
+  margin-bottom: -1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.best-scores {
+  height: 6rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 2rem;
+}
+
+.best-scores p {
+  font-size: 1.4rem;
+}
+
+/* -------------------------------------------------- */
+/*-------------------- GAME OVER----------------------*/
+/* -------------------------------------------------- */
+
+.gameover {
+  width: 26rem;
+  background-color: rgba(197, 69, 65, 0.8);
+  color: #fff;
+  border-radius: 16px;
+  padding: 3.6rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-13rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.gameover h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gameover h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.gameover p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}

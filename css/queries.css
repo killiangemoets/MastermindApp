@@ -1,0 +1,50 @@
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+/**************************/
+/******* BELOW 704px ******/
+/**************************/
+@media (max-width: 44em) {
+  html {
+    font-size: 88%;
+  }
+}
+
+/**************************/
+/******* BELOW 608px ******/
+/**************************/
+@media (max-width: 38em) {
+  html {
+    font-size: 70%;
+  }
+}
+/**************************/
+/******* BELOW 416px ******/
+/**************************/
+@media (max-width: 26em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+/**************************/
+/******* BELOW 384px ******/
+/**************************/
+@media (max-width: 24em) {
+  html {
+    font-size: 60%;
+  }
+  .btn--restart {
+    transform: translateX(2.6rem);
+  }
+
+  .btn--check {
+    transform: translateX(-2.6rem);
+  }
+  .infos {
+    transform: translateX(-2.6rem);
+  }
+
+  .existing-colors {
+    gap: 0.2rem;
+  }
+}

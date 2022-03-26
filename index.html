@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Summary that will appear on google, etc. -->
+    <meta name="description" content="Mastermind online game." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script defer type="module" src="js/controller.js"></script>
+
+    <title>Mastermind</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="col1">
+        <button class="btn btn--restart">Restart</button>
+        <ul class="points white-points">
+          <li class="points-line white-points-line" id="white-points-line-10">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-9">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-8">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-7">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-6">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-5">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-4">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-3">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-2">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+          <li class="points-line white-points-line" id="white-points-line-1">
+            <ul>
+              <li class="point">1</li>
+              <li class="point">2</li>
+              <li class="point">3</li>
+              <li class="point">4</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col2">
+        <div class="game">
+          <div class="hidden-colors">
+            <div class="line-number">
+              <p></p>
+            </div>
+            <ul class="holes">
+              <li class="hole"></li>
+              <li class="hole"></li>
+              <li class="hole"></li>
+              <li class="hole"></li>
+            </ul>
+            <div class="hide-holes"></div>
+          </div>
+          <div class="board">
+            <ul class="lines">
+              <li class="line" id="line10">
+                <div class="line-number">
+                  <p>10</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line9">
+                <div class="line-number">
+                  <p>9</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line8">
+                <div class="line-number">
+                  <p>8</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line7">
+                <div class="line-number">
+                  <p>7</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line6">
+                <div class="line-number">
+                  <p>6</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line5">
+                <div class="line-number">
+                  <p>5</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line4">
+                <div class="line-number">
+                  <p>4</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line3">
+                <div class="line-number">
+                  <p>3</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line2">
+                <div class="line-number">
+                  <p>2</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+              <li class="line" id="line1">
+                <div class="line-number">
+                  <p>1</p>
+                </div>
+                <ul class="holes">
+                  <li class="hole" data-hole="0"></li>
+                  <li class="hole" data-hole="1"></li>
+                  <li class="hole" data-hole="2"></li>
+                  <li class="hole" data-hole="3"></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="colors-list">
+          <ul class="existing-colors">
+            <li class="color" id="red" data-color="red"></li>
+            <li class="color" id="green" data-color="green"></li>
+            <li class="color" id="blue" data-color="blue"></li>
+            <li class="color" id="yellow" data-color="yellow"></li>
+            <li class="color" id="white" data-color="white"></li>
+            <li class="color" id="black" data-color="black"></li>
+            <li class="color" id="pink" data-color="pink"></li>
+            <li class="color" id="orange" data-color="orange"></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col3">
+        <div class="infos">
+          <p class="time">00:00</p>
+          <p class="score">Score 3000</p>
+        </div>
+        <ul class="points red-points">
+          <li class="points-line red-points-line" id="red-points-line-10">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-9">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-8">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-7">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-6">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-5">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-4">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-3">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-2">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+          <li class="points-line red-points-line" id="red-points-line-1">
+            <ul>
+              <li class="point">4</li>
+              <li class="point">3</li>
+              <li class="point">2</li>
+              <li class="point">1</li>
+            </ul>
+          </li>
+        </ul>
+        <button class="btn btn--check">Check</button>
+      </div>
+
+      <div class="win hidden">
+        <!-- <h1>Congratulations</h1>
+        <h3>You win!</h3>
+        <p class="win-score"></p>
+        <h4>Best Scores</h4>
+        <div class="best-scores">
+          <p>2000</p>
+          <p>1200</p>
+          <p>1000</p>
+        </div> -->
+      </div>
+      <div class="gameover hidden">
+        <h1>Game over</h1>
+        <h3>You Lost!</h3>
+        <p>Press Restart to try again</p>
+      </div>
+    </div>
+  </body>
+</html>
